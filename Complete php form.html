@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .error{
+            color:#ff0000;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>PHP Validation Form</title>
+</head>
+<body>
+<h2>Apply Here</h2>
+<br>
+<h1>This is the heading</h1>
+<form METHOD="post" action="<?php echo
+htmlspecialchars($-SERVER["PHP_SELF"])";?>">
+    Name: <input type="text" name="name">
+    <span class="error" >* <?php echo $nameErr;?>< /span>
+    <br> <br>
+    Email: <input type="email" name="email"> <br> <br>
+         <span class="error">* <?php echo $emailErr;?> </span>
+    Link to your portfolio: <input type="text" name="website"> <br> <br>
+              <span class="error" >* <?php echo $websiteErr;?> </span>
+    Your Bio: <textarea name="comment" cols="40" rows="5"></textarea> <br> <br>
+    Gender: <input type="radio" name="gender" value="Male">Male
+                   <span class="error" >* <?php echo $genderErr;?> </span>
+    <input type="radio" name="gender" value="Female">Female
+    <input type="radio" name="gender" value="other">Other
+    <br> <br>
+    <input type="submit" value="Submit">
+</form>
+<?php
+echo "<br>";
+echo "<h2>this is the information you have provided</h2>";
+echo  "<br>";
+echo $name;
+echo  "<br>";
+echo $email;
+echo  "<br>";
+echo $website;
+echo  "<br>";
+echo $comment;
+echo  "<br>";
+echo $gender;
+?>
+
+</body>
+</html>
